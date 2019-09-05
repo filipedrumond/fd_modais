@@ -2,38 +2,36 @@
 
 Atalho simples para criação e uso de modais e confirm do bootstrap
 
-Alert Básico:
+## Instalação
+Via [npm](http://npmjs.org):
+```shell
+npm install @filipedp/simple_dialog --save
+```
+### Alert Básico:
 
 ```js
 import { SimpleAlerts } from "@filipedp/fd_modais";
 SimpleAlerts.success({
     title: "Alert charmoso porem simples",
     text: "texto de um modal simples, fácil não ?",
-    });
+});
 ```
-## Retorno
 ### É retornado um objeto jQuery com o modal instanciado
 
 
-Confirm Básico:
+### Confirm Básico:
 
 ```js
 import { SimpleConfirms } from "@filipedp/fd_modais";
 SimpleConfirms.success({
     title: "Confirm Simples de Escolha",
     text: "texto de um confirm simples, fácil não ?",
-    });
+});
 ```
-## Retorno
 ### É retornado um objeto jQuery com o modal instanciado
 
 ---
 
-## Instalação
-Via [npm](http://npmjs.org):
-```shell
-npm install simple_dialog --save
-```
 ## Opções e configurações
 ### Alerts
 ```js
