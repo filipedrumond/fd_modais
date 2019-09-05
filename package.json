@@ -1,6 +1,6 @@
 {
   "name": "@filipedp/fd_modais",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Modais e Confirms Bootstrap estilizados",
   "main": "index.js",
   "scripts": {
