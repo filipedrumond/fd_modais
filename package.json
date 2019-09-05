@@ -1,6 +1,6 @@
 {
-  "name": "@filipedp/fd_modais",
-  "version": "1.0.2",
+  "name": "@filipedp/simple_dialog",
+  "version": "1.1.0",
   "description": "Modais e Confirms Bootstrap estilizados",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipedrumond/fd_modais.git",
+    "url": "git+https://github.com/filipedrumond/simple_dialog.git",
     "scss": "node-sass --watch assets/scss -o assets/css"
   },
   "keywords": [

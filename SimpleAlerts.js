@@ -7,9 +7,9 @@
 require('./JsBsModal');
 
 var $ = require('jquery');
-var advancedAlerts;
+var SimpleAlerts;
 
-module.exports = advancedAlerts = {
+module.exports = SimpleAlerts = {
     optionsDefault: {
         text: "",
         title: "",
@@ -53,7 +53,11 @@ module.exports = advancedAlerts = {
                 ],
             }
         }).on('hidden.bs.modal', function () {
-            options.closeCallback();
+            if (typeof options.closeCallback === 'function') {
+                options.closeCallback();
+            } else {
+                console.log("ERRO SIMPLE ALERT :: CLOSE CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
+            }
             modal.modal('dispose').remove();
         });
 
@@ -62,15 +66,15 @@ module.exports = advancedAlerts = {
         return modal;
     },
     success: function (options) {
-        return advancedAlerts.alert('success', options);
+        return SimpleAlerts.alert('success', options);
     },
     info: function (options) {
-        return advancedAlerts.alert('info', options);
+        return SimpleAlerts.alert('info', options);
     },
     warning: function (options) {
-        return advancedAlerts.alert('warning', options);
+        return SimpleAlerts.alert('warning', options);
     },
     error: function (options) {
-        return advancedAlerts.alert('error', options);
+        return SimpleAlerts.alert('error', options);
     },
 };

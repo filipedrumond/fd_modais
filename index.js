@@ -1,6 +1,6 @@
-let AdvancedAlerts = require('./AdvancedAlerts.js');
-let AdvancedConfirms = require('./AdvancedConfirms.js');
+let Simplelerts = require('./SimpleAlerts.js');
+let SimpleConfirms = require('./SimpleConfirms.js');
 module.exports = {
-    "AdvancedAlerts": AdvancedAlerts,
-    "AdvancedConfirms": AdvancedConfirms,
+    "Simplelerts": Simplelerts,
+    "SimpleConfirms": SimpleConfirms,
 }

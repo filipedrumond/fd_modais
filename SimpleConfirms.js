@@ -5,12 +5,12 @@
  *
  */
 require('./JsBsModal');
-var advancedAlerts = require('./AdvancedAlerts');
+var SimpleAlerts = require('./SimpleAlerts');
 
 var $ = require('jquery');
-var confirms;
+var SimpleConfirms;
 
-module.exports = confirms = {
+module.exports = SimpleConfirms = {
     optionsDefault: {
         text: "",
         title: "",
@@ -35,31 +35,18 @@ module.exports = confirms = {
                 $(this).attr("disabled", true);
                 if (typeof options.confirmCallback === 'function') {
                     options.confirmCallback();
-                } else if (typeof options.confirmCallback === 'string') {
-                    $(".modal").modal('hide');
-                    $.getJSON(options.confirmCallback)
-                        .done(function (data, jqXHR, type) {
-                            if (data.status !== 200) {
-                                advancedAlerts.error({
-                                    text: data.detail,
-                                    title: "Houve um problema...",
-                                })
-                            } else {
-                                advancedAlerts.success({
-                                    text: options.successText,
-                                    title: $("<span class='text-primary'>").html("Sucesso")
-                                });
-                            }
-                            $(".modal").modal('hide');
-                        }).fail(function () {
-                            advancedAlerts.error({ title: "ERRO", text: "Não conseguimos processar sua requisição, tente novamente mais tarde" });
-                        })
+                } else {
+                    console.log("ERRO SIMPLE CONFIRM :: CONFIRM CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
                 }
             });
 
         var btnNegate = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">')
             .html(`<span>${options.negateText}</span>`).click(function () {
-                options.negateCallback();
+                if (typeof options.negateCallback === 'function') {
+                    options.negateCallback();
+                } else {
+                    console.log("ERRO SIMPLE CONFIRM :: NEGATE CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
+                }
             });
 
         var modal = $.jsBsModal({
@@ -80,15 +67,15 @@ module.exports = confirms = {
         return modal;
     },
     success: function (options) {
-        return confirms.confirm('success', options);
+        return SimpleConfirms.confirm('success', options);
     },
     info: function (options) {
-        return confirms.confirm('info', options);
+        return SimpleConfirms.confirm('info', options);
     },
     warning: function (options) {
-        return confirms.confirm('warning', options);
+        return SimpleConfirms.confirm('warning', options);
     },
     error: function (options) {
-        return confirms.confirm('error', options);
+        return SimpleConfirms.confirm('error', options);
     },
 };
