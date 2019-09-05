@@ -22,9 +22,9 @@
   "author": "Filipe Drumond",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/filipedrumond/fd_modais/issues"
+    "url": "https://github.com/filipedrumond/simple_dialog/issues"
   },
-  "homepage": "https://github.com/filipedrumond/fd_modais#readme",
+  "homepage": "https://github.com/filipedrumond/simple_dialog#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1"

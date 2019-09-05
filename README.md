@@ -10,7 +10,7 @@ npm install @filipedp/simple_dialog --save
 ### Alert Básico:
 
 ```js
-import { SimpleAlerts } from "@filipedp/fd_modais";
+import { SimpleAlerts } from "@filipedp/simple_dialog";
 SimpleAlerts.success({
     title: "Alert charmoso porem simples",
     text: "texto de um modal simples, fácil não ?",
@@ -22,7 +22,7 @@ SimpleAlerts.success({
 ### Confirm Básico:
 
 ```js
-import { SimpleConfirms } from "@filipedp/fd_modais";
+import { SimpleConfirms } from "@filipedp/simple_dialog";
 SimpleConfirms.success({
     title: "Confirm Simples de Escolha",
     text: "texto de um confirm simples, fácil não ?",
@@ -43,7 +43,7 @@ let options = {
     closeText: "Fechar", //  Texto do botão fechar
     closeCallback: function () { return } // Função executada após o fechamento do modal
 }
-import { SimpleAlerts } from "@filipedp/fd_modais";
+import { SimpleAlerts } from "@filipedp/simple_dialog";
 SimpleAlerts.success(options);
 ```
 --
@@ -59,7 +59,7 @@ let options = {
     confirmCallback: function () { return }, // Função executada após a confirmção
     negateCallback: function () { return }  // Função executada após a negação
 }
-import { SimpleConfirms } from "@filipedp/fd_modais";
+import { SimpleConfirms } from "@filipedp/simple_dialog";
 SimpleConfirms.success(options);
 ```
 ## TIP
@@ -96,7 +96,7 @@ let options = {
     title: "Confirm Simples de Escolha",
     text: "texto de um confirm simples, fácil não ?",
 }
-import { SimpleAlerts } from "@filipedp/fd_modais";
+import { SimpleAlerts } from "@filipedp/simple_dialog";
 SimpleAlerts.success(options);
 SimpleAlerts.info(options);
 SimpleAlerts.warning(options);
@@ -109,7 +109,7 @@ let options = {
     title: "Confirm Simples de Escolha",
     text: "texto de um confirm simples, fácil não ?",
 }
-import { SimpleConfirms } from "@filipedp/fd_modais";
+import { SimpleConfirms } from "@filipedp/simple_dialog";
 SimpleConfirms.success(options);
 SimpleConfirms.info(options);
 SimpleConfirms.warning(options);
