@@ -4,8 +4,8 @@
  * @version: 1.0.0
  *
  */
-require('JsBsModal');
-var advancedAlerts = require('AdvancedAlerts');
+require('./JsBsModal');
+var advancedAlerts = require('./AdvancedAlerts');
 
 var $ = require('jquery');
 var confirms;
