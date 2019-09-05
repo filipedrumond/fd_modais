@@ -7,6 +7,17 @@ Via [npm](http://npmjs.org):
 ```shell
 npm install @filipedp/simple_dialog --save
 ```
+### No seu app.scss:
+```scss
+@import "~@filipedp/simple_dialog/scss/alerts";
+@import "~@filipedp/simple_dialog/scss/confirms";
+```
+
+### Modo css:
+```html
+<link rel="stylesheet" href="./node_modules/filipedp/simple_dialog/css/build.css">
+```
+
 ### Alert Básico:
 
 ```js
