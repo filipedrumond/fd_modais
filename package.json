@@ -1,0 +1,27 @@
+{
+  "name": "fd_modais",
+  "version": "1.0.0",
+  "description": "Modais e Confirms Bootstrap estilizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipedrumond/fd_modais.git"
+  },
+  "keywords": [
+    "modal",
+    "bootstrap",
+    "confirm",
+    "npm",
+    "js",
+    "javascript"
+  ],
+  "author": "Filipe Drumond",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipedrumond/fd_modais/issues"
+  },
+  "homepage": "https://github.com/filipedrumond/fd_modais#readme"
+}
