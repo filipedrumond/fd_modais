@@ -1,5 +1,5 @@
 {
-  "name": "fd_modais",
+  "name": "@filipedp/fd_modais",
   "version": "1.0.0",
   "description": "Modais e Confirms Bootstrap estilizados",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipedrumond/fd_modais.git"
+    "url": "git+https://github.com/filipedrumond/fd_modais.git",
+    "scss": "node-sass --watch assets/scss -o assets/css"
   },
   "keywords": [
     "modal",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/filipedrumond/fd_modais/issues"
   },
-  "homepage": "https://github.com/filipedrumond/fd_modais#readme"
+  "homepage": "https://github.com/filipedrumond/fd_modais#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
