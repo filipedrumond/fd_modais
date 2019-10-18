@@ -1,6 +1,6 @@
 {
   "name": "@filipedp/simple_dialog",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Modais e Confirms Bootstrap estilizados",
   "main": "index.js",
   "scripts": {

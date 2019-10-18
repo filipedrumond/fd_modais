@@ -1,5 +1,5 @@
 
-require('components/JsBsModal');
+require('./JsBsModal');
 
 var $ = require('jquery');
 var SimpleFormAlerts;
