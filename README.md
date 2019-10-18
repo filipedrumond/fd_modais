@@ -39,6 +39,23 @@ SimpleConfirms.success({
     text: "texto de um confirm simples, fácil não ?",
 });
 ```
+### Form Alert Básico:
+
+```js
+import { SimpleFormAlerts } from "@filipedp/simple_dialog";
+let $form = $("<form>")// etc... form jquery element mout and append;
+SimpleFormAlerts.success({
+    fomr: $form,
+    title: "Confirm Simples de Escolha",
+    text: "texto de um confirm simples, fácil não ?",
+    submitText:"Confirmar",
+    closeCallback:function(){},
+    submitCallback: function () {
+        $(".modal").modal('hide');
+    }
+});
+```
+
 ### É retornado um objeto jQuery com o modal instanciado
 
 ---
