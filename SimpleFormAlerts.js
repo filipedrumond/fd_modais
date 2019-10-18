@@ -1,4 +1,9 @@
-
+/* !
+ * @author: Filipe Drumond
+ * @date: 18/10/2019
+ * @version: 1.2.1
+ *
+ */
 require('./JsBsModal');
 
 var $ = require('jquery');
@@ -15,8 +20,8 @@ module.exports = SimpleFormAlerts = {
     },
     alert: function (type, options) {
         options = $.extend({}, this.optionsDefault, options);
-        var submit = $(`<button class="btn bg-verde text-white">`)
-            .html(`<span class="text-submit">${options.submitText}</span>`)
+        var submit = $(`<button class="btn btn-primary text-white">`)
+            .html(`<span>${options.submitText}</span>`)
             .click(function () { options.submitCallback() });
         if (typeof options.img === "string" && options.img !== "") {
             options.img = $(`<img src="${options.img}" class="modal-img">`)
