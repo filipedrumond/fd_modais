@@ -22,7 +22,10 @@ module.exports = SimpleFormAlerts = {
         options = $.extend({}, this.optionsDefault, options);
         var submit = $(`<button class="btn btn-primary text-white">`)
             .html(`<span>${options.submitText}</span>`)
-            .click(function () { options.submitCallback() });
+            .click(function (e) { 
+                e.preventDefault(); 
+                options.submitCallback() 
+            });
         if (typeof options.img === "string" && options.img !== "") {
             options.img = $(`<img src="${options.img}" class="modal-img">`)
         }

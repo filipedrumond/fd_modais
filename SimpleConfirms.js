@@ -31,7 +31,8 @@ module.exports = SimpleConfirms = {
         }
 
         var btnConfirm = $('<button type="button" class="btn btn-primary">')
-            .html(`<span>${options.confirmText}</span>`).click(function () {
+            .html(`<span>${options.confirmText}</span>`).click(function (e) {
+                e.preventDefault();                
                 $(this).attr("disabled", true);
                 if (typeof options.confirmCallback === 'function') {
                     options.confirmCallback();
