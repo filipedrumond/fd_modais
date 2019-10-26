@@ -44,7 +44,6 @@ module.exports = SimpleFormAlerts = {
                 ],
             }
         }).on('hidden.bs.modal', function () {
-            e.preventDefault();
             if (typeof options.closeCallback === 'function') {
                 options.closeCallback();
             } else {
