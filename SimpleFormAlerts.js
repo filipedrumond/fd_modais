@@ -22,9 +22,14 @@ module.exports = SimpleFormAlerts = {
         options = $.extend({}, this.optionsDefault, options);
         var submit = $(`<button class="btn btn-primary text-white">`)
             .html(`<span>${options.submitText}</span>`)
-            .click(function (e) { 
-                e.preventDefault(); 
-                options.submitCallback() 
+            .click(function (e) {
+                e.preventDefault();
+                if (typeof options.submitCallback === 'function') {
+                    options.submitCallback();
+                } else {
+                    console.log("ERRO SIMPLE FORM :: submitCallback NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
+                }
+                $(".modal").modal('hide');
             });
         if (typeof options.img === "string" && options.img !== "") {
             options.img = $(`<img src="${options.img}" class="modal-img">`)
@@ -39,8 +44,13 @@ module.exports = SimpleFormAlerts = {
                 ],
             }
         }).on('hidden.bs.modal', function () {
-            options.closeCallback();
-            modal.modal('dispose').remove();
+            e.preventDefault();
+            if (typeof options.closeCallback === 'function') {
+                options.closeCallback();
+            } else {
+                console.log("ERRO SIMPLE FORM :: closeCallback NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
+            }
+            $(".modal").modal('dispose').remove();
         });
         modal.find('.modal-content').addClass('form-alert form-alert-' + type);
         return modal;

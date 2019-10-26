@@ -32,22 +32,25 @@ module.exports = SimpleConfirms = {
 
         var btnConfirm = $('<button type="button" class="btn btn-primary">')
             .html(`<span>${options.confirmText}</span>`).click(function (e) {
-                e.preventDefault();                
+                e.preventDefault();
                 $(this).attr("disabled", true);
                 if (typeof options.confirmCallback === 'function') {
                     options.confirmCallback();
                 } else {
                     console.log("ERRO SIMPLE CONFIRM :: CONFIRM CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
                 }
+                $(".modal").modal('hide');
             });
 
         var btnNegate = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">')
             .html(`<span>${options.negateText}</span>`).click(function () {
+                e.preventDefault();
                 if (typeof options.negateCallback === 'function') {
                     options.negateCallback();
                 } else {
                     console.log("ERRO SIMPLE CONFIRM :: NEGATE CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
                 }
+                $(".modal").modal('hide');
             });
 
         var modal = $.jsBsModal({
