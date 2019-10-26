@@ -43,7 +43,7 @@ module.exports = SimpleConfirms = {
             });
 
         var btnNegate = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">')
-            .html(`<span>${options.negateText}</span>`).click(function () {
+            .html(`<span>${options.negateText}</span>`).click(function (e) {
                 e.preventDefault();
                 if (typeof options.negateCallback === 'function') {
                     options.negateCallback();
