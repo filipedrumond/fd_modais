@@ -23,7 +23,6 @@ module.exports = SimpleFormAlerts = {
         var submit = $(`<button class="btn btn-primary text-white">`)
             .html(`<span>${options.submitText}</span>`)
             .click(function (e) {
-                e.preventDefault();
                 if (typeof options.submitCallback === 'function') {
                     options.submitCallback();
                 } else {
@@ -34,6 +33,9 @@ module.exports = SimpleFormAlerts = {
         if (typeof options.img === "string" && options.img !== "") {
             options.img = $(`<img src="${options.img}" class="modal-img">`)
         }
+        options.form.submit(function (e) {
+            e.preventDefault();
+        });
         var modal = $.jsBsModal({
             contents: {
                 'close': '',
