@@ -20,23 +20,25 @@ module.exports = SimpleFormAlerts = {
     },
     alert: function (type, options) {
         options = $.extend({}, this.optionsDefault, options);
-        var submit = $(`<button class="btn btn-primary text-white">`)
+        let submit = $(`<button type="button" class="btn btn-primary">`)
             .html(`<span>${options.submitText}</span>`)
             .click(function (e) {
+                e.preventDefault();
+                $(this).attr("disabled", true);
                 if (typeof options.submitCallback === 'function') {
-                    options.submitCallback();
+                    modal.on('hidden.bs.modal', function () {
+                        options.submitCallback();
+                        $(".modal").modal('dispose').remove();
+                    });
                 } else {
-                    console.log("ERRO SIMPLE FORM :: submitCallback NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
+                    console.log("ERRO SIMPLE CONFIRM :: CONFIRM CALLBACK NÃO É UMA FUNÇÃO E NÃO FOI EXECUTADO");
                 }
                 $(".modal").modal('hide');
             });
         if (typeof options.img === "string" && options.img !== "") {
             options.img = $(`<img src="${options.img}" class="modal-img">`)
         }
-        options.form.submit(function (e) {
-            e.preventDefault();
-        });
-        var modal = $.jsBsModal({
+        let modal = $.jsBsModal({
             contents: {
                 'close': '',
                 'modal-title': [options.img, options.title],
